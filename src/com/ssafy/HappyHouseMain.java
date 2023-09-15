@@ -68,10 +68,10 @@ public class HappyHouseMain {
 	}
 
 	private void aptInfo() throws NumberFormatException, IOException {
-		System.out.println("********** 동코드 검색(동이름) **********");
+		System.out.println("********** 아파트 정보 검색(동코드) **********");
 		System.out.print("동코드 : ");
 		String dongCode = in.readLine();
-		System.out.println("********** 아파트 정보 검색(동코드) **********");
+		System.out.println("********** 아파트 목록 **********");
 		List<HouseInfoDto> aptList = houseService.searchByDongCode(Integer.parseInt(dongCode));
 		for(HouseInfoDto apt : aptList) {
 			System.out.println(apt.toString());
@@ -79,7 +79,18 @@ public class HappyHouseMain {
 	}
 
 	private void aptDealInfo() throws NumberFormatException, IOException {
-		
+		System.out.println("********** 아파트 매매 정보 검색(아파트번호) **********");
+		System.out.print("아파트번호 : ");
+		String aptNo = in.readLine();
+		System.out.print("거래년도 : ");
+		String year = in.readLine();
+		System.out.print("거래월 : ");
+		String month = in.readLine();
+		System.out.println("********** 아파트 매매 목록 **********");
+		List<HouseDealDto> houseList = houseService.searchByAptNo(aptNo, Integer.parseInt(year), Integer.parseInt(month));
+		for(HouseDealDto house : houseList) {
+			System.out.println(house.toString());
+		}
 	}
 
 	public static void main(String[] args) {

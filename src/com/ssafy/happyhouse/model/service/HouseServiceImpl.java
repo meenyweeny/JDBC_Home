@@ -61,9 +61,25 @@ public class HouseServiceImpl implements HouseService {
 	}
 
 	@Override
-	public List<HouseDealDto> searchByAptNo(long aptNo, int year, int month) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<HouseDealDto> searchByAptNo(String aptNo, int year, int month) {
+		List<HouseDealDto> list = new ArrayList<>();
+		try {
+			Connection con = database.getConnection();
+			String query = "select * from housedeal " + 
+			" where aptCode = " + aptNo + " and " +
+					"dealYear = " + year + " and dealMonth = " + month;
+			Statement stat = con.createStatement();
+			ResultSet rs = stat.executeQuery(query);
+	        while(rs.next()) {
+	        	list.add(new HouseDealDto(rs.getString(1),
+	        			rs.getString(2),rs.getString(3),
+	        			rs.getString(4),rs.getString(5),rs.getString(6),
+	        			rs.getString(7),rs.getString(8),rs.getString(9)));
+	        }
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 }

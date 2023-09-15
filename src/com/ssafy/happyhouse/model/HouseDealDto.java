@@ -10,8 +10,26 @@ public class HouseDealDto {
 	private String area;
 	private String floor;
 	private String cancelDealType;
-	private long aptCode;
+	private String aptCode;
 
+	public HouseDealDto() {
+		
+	}
+	
+	public HouseDealDto(String no, String dealAmount, String dealYear, String dealMonth,
+			String dealDay, String area, String floor, String cancelDealType, String aptCode) {
+		this.setNo(no);
+		this.setDealAmount(dealAmount);
+		this.setDealYear(Integer.parseInt(dealYear));
+		this.setDealYear(Integer.parseInt(dealYear));
+		this.setDealMonth(Integer.parseInt(dealMonth));
+		this.setDealDay(Integer.parseInt(dealDay));
+		this.setArea(area);
+		this.setFloor(floor);
+		this.setCancelDealType(cancelDealType);
+		this.setAptCode(aptCode);
+	}
+	
 	public String getNo() {
 		return no;
 	}
@@ -76,11 +94,11 @@ public class HouseDealDto {
 		this.cancelDealType = cancelDealType;
 	}
 
-	public long getAptCode() {
+	public String getAptCode() {
 		return aptCode;
 	}
 
-	public void setAptCode(long aptCode) {
+	public void setAptCode(String aptCode) {
 		this.aptCode = aptCode;
 	}
 

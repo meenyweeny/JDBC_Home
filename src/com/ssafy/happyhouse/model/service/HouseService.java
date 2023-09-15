@@ -12,6 +12,6 @@ public interface HouseService {
 
 	List<HouseInfoDto> searchByDongCode(int dongCode);
 
-	List<HouseDealDto> searchByAptNo(long aptNo, int year, int month);
+	List<HouseDealDto> searchByAptNo(String aptNo, int year, int month);
 
 }
