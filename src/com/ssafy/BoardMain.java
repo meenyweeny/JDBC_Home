@@ -3,9 +3,7 @@ package com.ssafy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 
-import com.ssafy.board.model.BoardDto;
 
 public class BoardMain {
 	private BufferedReader in;
