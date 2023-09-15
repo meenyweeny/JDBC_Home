@@ -2,7 +2,7 @@ package com.ssafy.happyhouse.model;
 
 public class HouseInfoDto {
 
-	private long aptCode;
+	private String aptCode;
 	private int buildYear;
 	private String roadName;
 	private String roadNameBonbun;
@@ -21,12 +21,39 @@ public class HouseInfoDto {
 	private String jibun;
 	private String lng;
 	private String lat;
+	
+	public HouseInfoDto() {
+	}
+	
+	public HouseInfoDto(String aptCode, int buildYear, String roadName,
+			String roadNameBonbun, String roadNameBubun, String roadNameSeq, 
+			String roadNameBasementCode, String roadNameCode, String dong,
+			String bonbun, String bubun, String sigunguCode,
+			String eubmyundongCode,  String dongCode, String landCode,
+			String apartmentName, String jibun,  String lng, String lat) {
+		this.setAptCode(aptCode);
+		this.setBuildYear(buildYear);
+		this.setRoadName(roadName);
+		this.setRoadNameBonbun(roadNameBonbun);
+		this.setRoadNameBubun(roadNameBubun);
+		this.setRoadNameSeq(roadNameSeq);
+		this.setBonbun(bonbun);
+		this.setBubun(bubun);
+		this.setSigunguCode(sigunguCode);
+		this.setEubmyundongCode(eubmyundongCode);
+		this.setDongCode(dongCode);
+		this.setLandCode(landCode);
+		this.setApartmentName(apartmentName);
+		this.setJibun(jibun);
+		this.setLng(lng);
+		this.setLat(lat);
+	}
 
-	public long getAptCode() {
+	public String getAptCode() {
 		return aptCode;
 	}
 
-	public void setAptCode(long aptCode) {
+	public void setAptCode(String aptCode) {
 		this.aptCode = aptCode;
 	}
 

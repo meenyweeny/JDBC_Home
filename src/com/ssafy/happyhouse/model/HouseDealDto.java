@@ -2,7 +2,7 @@ package com.ssafy.happyhouse.model;
 
 public class HouseDealDto {
 
-	private long no;
+	private String no;
 	private String dealAmount;
 	private int dealYear;
 	private int dealMonth;
@@ -12,11 +12,11 @@ public class HouseDealDto {
 	private String cancelDealType;
 	private long aptCode;
 
-	public long getNo() {
+	public String getNo() {
 		return no;
 	}
 
-	public void setNo(long no) {
+	public void setNo(String no) {
 		this.no = no;
 	}
 
